@@ -1,0 +1,90 @@
+{
+  "name": "@runwell/toumana-brand-kit",
+  "version": "1.0.0",
+  "description": "Design tokens and theme for Jardins de Toumana - Mediterranean warmth with gold accent",
+  "type": "module",
+  "main": "./dist/esm/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js"
+    },
+    "./css/*": "./dist/css/*",
+    "./tailwind/preset": {
+      "require": "./dist/tailwind/preset.js",
+      "import": "./dist/tailwind/preset.js",
+      "default": "./dist/tailwind/preset.js"
+    },
+    "./tailwind/*": "./dist/tailwind/*",
+    "./mui": {
+      "types": "./dist/types/mui/index.d.ts",
+      "import": "./dist/mui/index.js"
+    },
+    "./mui/light": {
+      "types": "./dist/types/mui/light.d.ts",
+      "import": "./dist/mui/light.js"
+    },
+    "./mui/dark": {
+      "types": "./dist/types/mui/dark.d.ts",
+      "import": "./dist/mui/dark.js"
+    },
+    "./json/*": "./dist/json/*"
+  },
+  "files": [
+    "dist",
+    "src/types"
+  ],
+  "scripts": {
+    "build": "npm run build:tokens && npm run build:esm && npm run build:types",
+    "build:tokens": "tsx scripts/build.ts",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "publish:local": "bash scripts/publish.sh",
+    "release": "git push origin main && npm run publish:local"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.1.0",
+    "typescript": "^5.7.2",
+    "tsx": "^4.19.2",
+    "@types/node": "^22.10.2"
+  },
+  "peerDependencies": {
+    "@mui/material": ">=5.0.0",
+    "tailwindcss": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@mui/material": {
+      "optional": true
+    },
+    "tailwindcss": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "design-tokens",
+    "brand-kit",
+    "toumana",
+    "jardins-de-toumana",
+    "tailwind",
+    "mui",
+    "theme",
+    "mediterranean"
+  ],
+  "sideEffects": [
+    "./dist/css/*.css"
+  ],
+  "author": "Runwell Systems",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runwell-systems/toumana-brand-kit.git"
+  },
+  "homepage": "https://github.com/runwell-systems/toumana-brand-kit#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "color": {
+    "primary": { "value": "#E09900", "type": "color" },
+    "primaryHover": { "value": "#EDB059", "type": "color" },
+    "primaryLight": { "value": "#FFD166", "type": "color" },
+    "primaryDark": { "value": "#C78700", "type": "color" },
+    "onPrimary": { "value": "#FFFFFF", "type": "color" },
+
+    "secondary": { "value": "#80C8CF", "type": "color" },
+    "secondaryHover": { "value": "#B3DEE2", "type": "color" },
+    "onSecondary": { "value": "#004B56", "type": "color" },
+
+    "background": { "value": "#004B56", "type": "color" },
+    "backgroundAlt": { "value": "#003D47", "type": "color" },
+    "surface": { "value": "#003D47", "type": "color" },
+    "surfaceHover": { "value": "#002F38", "type": "color" },
+
+    "text": { "value": "#FFFFFF", "type": "color" },
+    "textSecondary": { "value": "#B3DEE2", "type": "color" },
+    "textMuted": { "value": "#80C8CF", "type": "color" },
+    "textDisabled": { "value": "#4DB2BC", "type": "color" },
+
+    "border": { "value": "#008186", "type": "color" },
+    "borderHover": { "value": "#4DB2BC", "type": "color" },
+    "divider": { "value": "#003D47", "type": "color" },
+
+    "link": { "value": "#E09900", "type": "color" },
+    "linkHover": { "value": "#EDB059", "type": "color" },
+
+    "success": { "value": "#10B981", "type": "color" },
+    "successLight": { "value": "#047857", "type": "color" },
+    "warning": { "value": "#F59E0B", "type": "color" },
+    "warningLight": { "value": "#B45309", "type": "color" },
+    "error": { "value": "#EF4444", "type": "color" },
+    "errorLight": { "value": "#B91C1C", "type": "color" },
+    "info": { "value": "#2EA3F2", "type": "color" },
+    "infoLight": { "value": "#1D4ED8", "type": "color" }
+  }
+}
