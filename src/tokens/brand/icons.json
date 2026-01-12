@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "color": {
+      "default": { "value": "{palette.gray.500}", "type": "color", "description": "Default icon color - muted gray" },
+      "hover": { "value": "{palette.gray.700}", "type": "color", "description": "Hover state - darker gray" },
+      "active": { "value": "{palette.success.500}", "type": "color", "description": "Active state example - actual color is contextual based on status (success/warning/error/info)" },
+      "activeOutline": { "value": "{palette.success.600}", "type": "color", "description": "Darker outline for active filled icons" },
+      "disabled": { "value": "{palette.gray.300}", "type": "color", "description": "Disabled state - light gray" },
+      "inverse": { "value": "{palette.white}", "type": "color", "description": "Icon on dark backgrounds" },
+      "onPrimary": { "value": "{palette.white}", "type": "color", "description": "Icon on terracotta/primary background" },
+      "onSecondary": { "value": "{palette.white}", "type": "color", "description": "Icon on golden/secondary background" },
+      "onSurface": { "value": "{palette.gray.600}", "type": "color", "description": "Icon on cream surface" }
+    },
+    "status": {
+      "success": { "value": "{palette.success.500}", "type": "color", "description": "Success fill color" },
+      "successOutline": { "value": "{palette.success.600}", "type": "color", "description": "Success outline for active state" },
+      "warning": { "value": "{palette.warning.500}", "type": "color", "description": "Warning fill color" },
+      "warningOutline": { "value": "{palette.warning.600}", "type": "color", "description": "Warning outline for active state" },
+      "error": { "value": "{palette.error.500}", "type": "color", "description": "Error fill color" },
+      "errorOutline": { "value": "{palette.error.600}", "type": "color", "description": "Error outline for active state" },
+      "info": { "value": "{palette.info.500}", "type": "color", "description": "Info fill color" },
+      "infoOutline": { "value": "{palette.info.600}", "type": "color", "description": "Info outline for active state" }
+    },
+    "brand": {
+      "terracotta": { "value": "{palette.terracotta.500}", "type": "color", "description": "Primary brand accent" },
+      "golden": { "value": "{palette.golden.500}", "type": "color", "description": "Secondary brand accent" },
+      "amber": { "value": "{palette.amber.500}", "type": "color", "description": "Tertiary brand accent" },
+      "olive": { "value": "{palette.olive.500}", "type": "color", "description": "La Tavla primary" },
+      "coral": { "value": "{palette.coral.500}", "type": "color", "description": "La Tavla accent" }
+    }
+  }
+}

@@ -129,7 +129,7 @@ export const ${mode}ThemeOptions: ThemeOptions = {
     divider: '${colors.divider || colors.border || '#E5E5E5'}',
   },
   typography: {
-    fontFamily: '"Manrope", "Open Sans", system-ui, -apple-system, sans-serif',
+    fontFamily: '"Avenir Next", "Avenir", system-ui, -apple-system, sans-serif',
     h1: {
       fontWeight: 800,
     },
@@ -202,6 +202,7 @@ async function build() {
       source: [
         join(rootDir, 'src/tokens/core/**/*.json'),
         join(rootDir, 'src/tokens/brand/colors.json'),
+        join(rootDir, 'src/tokens/brand/icons.json'),
         join(rootDir, `src/tokens/brand/semantic.${mode}.json`),
       ],
       platforms: {
@@ -237,6 +238,7 @@ async function build() {
     source: [
       join(rootDir, 'src/tokens/core/**/*.json'),
       join(rootDir, 'src/tokens/brand/colors.json'),
+      join(rootDir, 'src/tokens/brand/icons.json'),
       join(rootDir, 'src/tokens/brand/semantic.light.json'),
     ],
     platforms: {
@@ -259,6 +261,7 @@ async function build() {
       source: [
         join(rootDir, 'src/tokens/core/**/*.json'),
         join(rootDir, 'src/tokens/brand/colors.json'),
+        join(rootDir, 'src/tokens/brand/icons.json'),
         join(rootDir, `src/tokens/brand/semantic.${mode}.json`),
       ],
       platforms: {

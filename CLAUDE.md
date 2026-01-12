@@ -4,18 +4,44 @@ Design tokens and theme package for Jardins de Toumana applications.
 
 **npm package:** `@runwell/toumana-brand-kit`
 
+## Brand Architecture
+
+Jardins Toumana operates with **4 sub-brands**:
+
+| Sub-brand | Type | Primary Color |
+|-----------|------|---------------|
+| **Jardins Toumana** | Master Brand | Terracotta `#DF7F35` |
+| **Taddart** | Hebergement | Golden `#DBAC40` |
+| **Tazzert** | Restaurant-Bar | Amber `#F8981D` |
+| **La Tavla** | Bar-Rooftop | Olive `#515839` / Coral `#FF6D33` |
+
 ## Brand Identity
+
+### Jardins Toumana Primary Colors
 
 | Color | Hex | Usage |
 |-------|-----|-------|
-| Toumana Gold | `#E09900` | Primary accent, CTAs, links |
-| Toumana Teal | `#004B56` | Footer, dark mode background |
-| Mediterranean Cream | `#F2E3C6` | Surface, light backgrounds |
+| Terracotta Orange | `#DF7F35` | Primary accent, CTAs, links |
+| Golden Yellow | `#DBAC40` | Secondary accent |
+| Amber Orange | `#F8981D` | Tertiary accent |
 
-**Typography:**
-- Headlines: Manrope (Google Fonts) - weights 400, 500, 600, 700, 800
-- Elegant: Noto Serif - weights 400, 600
-- Body: Open Sans - weights 400, 500, 600, 700
+### Secondary Colors
+
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Sage Green | `#80A2A3` | Subtle accents |
+| Soft Lime | `#DDE4B8` | Light backgrounds |
+| Cream | `#F2E3C6` | Surface, light backgrounds |
+
+### La Tavla (Dark Theme) Colors
+
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Olive Green | `#515839` | Background, primary |
+| Soft Lime | `#DDE4B8` | Secondary |
+| Coral Orange | `#FF6D33` | Accent, CTAs |
+
+**Typography:** Avenir Next (weights 400, 500, 600, 700)
 
 ## Package Structure
 
@@ -55,9 +81,27 @@ npm publish            # Publish to npm
 
 ## Theme Approach
 
-**Light-first:** Unlike Orbit's dark-first approach, Toumana uses a warm, Mediterranean light theme as default. The dark mode uses teal as the base color instead of pure black.
+**Light-first:** Toumana uses a warm, Mediterranean light theme as default with cream and white backgrounds.
 
-**Rounded corners:** Toumana uses soft rounded corners (3-8px) instead of Orbit's square edges, reflecting the warm, welcoming hospitality aesthetic.
+**Dark mode (La Tavla):** Uses olive green as the base color instead of pure black, with coral orange accents. Designed for evening/rooftop bar ambiance.
+
+**Rounded corners:** Soft rounded corners (4-8px) reflecting warm, welcoming hospitality aesthetic.
+
+## Color Palette Summary
+
+### Light Theme (Jardins Toumana)
+- Background: White `#FFFFFF`
+- Surface: Cream `#F2E3C6`
+- Primary: Terracotta `#DF7F35`
+- Secondary: Golden `#DBAC40`
+- Text: Olive `#515839`
+
+### Dark Theme (La Tavla)
+- Background: Olive `#515839`
+- Surface: Dark Olive `#454B30`
+- Primary: Coral `#FF6D33`
+- Secondary: Lime `#DDE4B8`
+- Text: White `#FFFFFF`
 
 ## Universal Rules
 
@@ -66,5 +110,5 @@ See [Universal Development Rules](/Users/balencia/Documents/Code/claude-PM/found
 ## Related Files
 
 - PM Project: `/claude-PM/projects/toumana/`
-- Brand Guidelines: `/claude-PM/projects/toumana/foundation/brand-identity.v1.md`
+- Brand Guidelines: `/claude-PM/projects/toumana/foundation/brand-identity.v2.md`
 - Hotel Management: `/Users/balencia/Documents/Code/hotel-management/`

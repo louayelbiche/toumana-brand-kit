@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toumana Icon System Guide</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm;
+    }
+
+    @page :first {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #333333;
+      background: #ffffff;
+    }
+
+    /* Cover Page - Full Bleed */
+    .cover {
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 210mm;
+      height: 297mm;
+      text-align: center;
+      background: linear-gradient(135deg, #FFFDF8 0%, #F2E3C6 100%);
+      padding: 60px;
+    }
+
+    .cover-logo {
+      width: 140px;
+      height: 140px;
+      background: #E09900;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 48px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .cover-logo img {
+      width: 72px;
+      height: 72px;
+    }
+
+    .cover h1 {
+      font-size: 36pt;
+      font-weight: 800;
+      color: #004B56;
+      margin-bottom: 16px;
+    }
+
+    .cover h2 {
+      font-size: 18pt;
+      font-weight: 500;
+      color: #6B7280;
+      margin-bottom: 40px;
+    }
+
+    .cover-meta {
+      font-size: 10pt;
+      color: #6B7280;
+    }
+
+    /* Section Headers */
+    h1 {
+      font-size: 24pt;
+      font-weight: 800;
+      color: #004B56;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #E09900;
+    }
+
+    h2 {
+      font-size: 16pt;
+      font-weight: 700;
+      color: #004B56;
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #374151;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    /* Page breaks */
+    .page-break {
+      page-break-after: always;
+    }
+
+    /* Icon Grid */
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .icon-card {
+      width: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 8px;
+      background: #FAFAFA;
+      border-radius: 8px;
+      border: 1px solid #E5E5E5;
+    }
+
+    .icon-card img {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 8px;
+    }
+
+    .icon-card .label {
+      font-size: 8pt;
+      color: #374151;
+      text-align: center;
+    }
+
+    /* Brand Logo Grid */
+    .brand-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .brand-card {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+      background: #FAFAFA;
+      border-radius: 12px;
+      border: 1px solid #E5E5E5;
+    }
+
+    .brand-card img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 12px;
+    }
+
+    .brand-card .brand-name {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #374151;
+      text-align: center;
+    }
+
+    .brand-card .brand-type {
+      font-size: 8pt;
+      color: #6B7280;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    /* Size Scale */
+    .size-scale {
+      display: flex;
+      align-items: flex-end;
+      gap: 24px;
+      margin: 20px 0;
+      padding: 24px;
+      background: #FAFAFA;
+      border-radius: 8px;
+    }
+
+    .size-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .size-item img {
+      margin-bottom: 8px;
+    }
+
+    .size-item .size-label {
+      font-size: 9pt;
+      color: #6B7280;
+    }
+
+    /* State Demo */
+    .state-demo {
+      display: flex;
+      gap: 32px;
+      margin: 20px 0;
+      padding: 24px;
+      background: #FAFAFA;
+      border-radius: 8px;
+    }
+
+    .state-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .state-item img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .state-item .state-label {
+      font-size: 9pt;
+      color: #6B7280;
+    }
+
+    /* Color Swatches */
+    .color-row {
+      display: flex;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .color-swatch {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .swatch {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #E5E5E5;
+    }
+
+    .swatch img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .swatch-info {
+      font-size: 9pt;
+    }
+
+    .swatch-info .name {
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .swatch-info .hex {
+      color: #6B7280;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 10pt;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #E5E5E5;
+    }
+
+    th {
+      background: #F2E3C6;
+      font-weight: 600;
+      color: #004B56;
+    }
+
+    tr:nth-child(even) {
+      background: #FAFAFA;
+    }
+
+    /* Code */
+    code {
+      font-family: 'SF Mono', 'Courier New', monospace;
+      font-size: 9pt;
+      background: #F3F4F6;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid #E5E5E5;
+      font-size: 9pt;
+      color: #6B7280;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Cover Page -->
+<div class="cover">
+  <div class="cover-logo">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" alt="Home">
+  </div>
+  <h1>Toumana</h1>
+  <h2>Icon System Guide</h2>
+  <p class="cover-meta">
+    Version 1.0 | January 2026<br>
+    Jardins de Toumana Brand Kit
+  </p>
+</div>
+
+<!-- Design Principles -->
+<h1>Design Principles</h1>
+
+<p>The Toumana icon system follows Apple and Airbnb design principles, creating a clean, warm, and welcoming visual language that reflects Mediterranean hospitality.</p>
+
+<h3>Why Lucide Icons?</h3>
+
+<table>
+  <tr>
+    <th>Characteristic</th>
+    <th>Apple/Airbnb Standard</th>
+    <th>Lucide Implementation</th>
+  </tr>
+  <tr>
+    <td>Stroke Weight</td>
+    <td>1.5-2px consistent</td>
+    <td>2px default</td>
+  </tr>
+  <tr>
+    <td>Stroke Caps</td>
+    <td>Rounded, friendly</td>
+    <td>Round linecap/linejoin</td>
+  </tr>
+  <tr>
+    <td>Style</td>
+    <td>Outlined default</td>
+    <td>Outlined with fill option</td>
+  </tr>
+  <tr>
+    <td>Geometry</td>
+    <td>Clean, minimal</td>
+    <td>Simple, recognizable</td>
+  </tr>
+  <tr>
+    <td>Warmth</td>
+    <td>Human, approachable</td>
+    <td>Soft rounded corners</td>
+  </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- Size Scale -->
+<h1>Size Scale</h1>
+
+<p>Five sizes aligned with the Toumana spacing system. Default size is 20px (md) for most UI elements.</p>
+
+<div class="size-scale">
+  <div class="size-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" width="14" height="14" alt="xs">
+    <span class="size-label">xs (14px)</span>
+  </div>
+  <div class="size-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" width="16" height="16" alt="sm">
+    <span class="size-label">sm (16px)</span>
+  </div>
+  <div class="size-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" width="20" height="20" alt="md">
+    <span class="size-label">md (20px) DEFAULT</span>
+  </div>
+  <div class="size-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" width="24" height="24" alt="lg">
+    <span class="size-label">lg (24px)</span>
+  </div>
+  <div class="size-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" width="32" height="32" alt="xl">
+    <span class="size-label">xl (32px)</span>
+  </div>
+</div>
+
+<table>
+  <tr>
+    <th>Token</th>
+    <th>Size</th>
+    <th>Use Case</th>
+    <th>Tailwind</th>
+  </tr>
+  <tr>
+    <td><code>xs</code></td>
+    <td>14px</td>
+    <td>Badges, source indicators</td>
+    <td><code>w-3.5 h-3.5</code></td>
+  </tr>
+  <tr>
+    <td><code>sm</code></td>
+    <td>16px</td>
+    <td>Inline text, compact UI</td>
+    <td><code>w-4 h-4</code></td>
+  </tr>
+  <tr>
+    <td><code>md</code></td>
+    <td>20px</td>
+    <td>Buttons, navigation (default)</td>
+    <td><code>w-5 h-5</code></td>
+  </tr>
+  <tr>
+    <td><code>lg</code></td>
+    <td>24px</td>
+    <td>Stat cards, section headers</td>
+    <td><code>w-6 h-6</code></td>
+  </tr>
+  <tr>
+    <td><code>xl</code></td>
+    <td>32px</td>
+    <td>Empty states, modals</td>
+    <td><code>w-8 h-8</code></td>
+  </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- Color Usage -->
+<h1>Color Usage</h1>
+
+<h3>Icon States</h3>
+
+<div class="state-demo">
+  <div class="state-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" alt="Default">
+    <span class="state-label">Default</span>
+  </div>
+  <div class="state-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23374151' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" alt="Hover">
+    <span class="state-label">Hover</span>
+  </div>
+  <div class="state-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310B981' stroke='%23059669' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" alt="Active">
+    <span class="state-label">Active</span>
+  </div>
+  <div class="state-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D1D5DB' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" alt="Disabled">
+    <span class="state-label">Disabled</span>
+  </div>
+</div>
+
+<table>
+  <tr>
+    <th>State</th>
+    <th>Color</th>
+    <th>Hex</th>
+    <th>Style</th>
+  </tr>
+  <tr>
+    <td>Default</td>
+    <td>Gray 500</td>
+    <td><code>#6B7280</code></td>
+    <td>Outlined, 2px stroke</td>
+  </tr>
+  <tr>
+    <td>Hover</td>
+    <td>Gray 700</td>
+    <td><code>#374151</code></td>
+    <td>Outlined, 2px stroke</td>
+  </tr>
+  <tr>
+    <td>Active/Selected</td>
+    <td>Status Color</td>
+    <td><code>Contextual</code></td>
+    <td>Filled + darker outline, 2.5px stroke</td>
+  </tr>
+  <tr>
+    <td>Disabled</td>
+    <td>Gray 300</td>
+    <td><code>#D1D5DB</code></td>
+    <td>Outlined, 2px stroke</td>
+  </tr>
+</table>
+
+<h3>Status Colors</h3>
+
+<div class="color-row">
+  <div class="color-swatch">
+    <div class="swatch" style="background: #ECFDF5;">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E" alt="Success">
+    </div>
+    <div class="swatch-info">
+      <div class="name">Success</div>
+      <div class="hex">#10B981</div>
+    </div>
+  </div>
+  <div class="color-swatch">
+    <div class="swatch" style="background: #FFFBEB;">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F59E0B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z'/%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3C/svg%3E" alt="Warning">
+    </div>
+    <div class="swatch-info">
+      <div class="name">Warning</div>
+      <div class="hex">#F59E0B</div>
+    </div>
+  </div>
+  <div class="color-swatch">
+    <div class="swatch" style="background: #FEF2F2;">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EF4444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m15 9-6 6'/%3E%3Cpath d='m9 9 6 6'/%3E%3C/svg%3E" alt="Error">
+    </div>
+    <div class="swatch-info">
+      <div class="name">Error</div>
+      <div class="hex">#EF4444</div>
+    </div>
+  </div>
+  <div class="color-swatch">
+    <div class="swatch" style="background: #EFF6FF;">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232EA3F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 16v-4'/%3E%3Cpath d='M12 8h.01'/%3E%3C/svg%3E" alt="Info">
+    </div>
+    <div class="swatch-info">
+      <div class="name">Info</div>
+      <div class="hex">#2EA3F2</div>
+    </div>
+  </div>
+</div>
+
+<h3>Active State Pattern</h3>
+
+<p>Active/selected icons use <strong>fill + darker outline</strong> with contextual status colors:</p>
+
+<div class="state-demo">
+  <div class="state-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310B981' stroke='%23059669' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E" alt="Success">
+    <span class="state-label">Success</span>
+  </div>
+  <div class="state-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F59E0B' stroke='%23D97706' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z'/%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3C/svg%3E" alt="Warning">
+    <span class="state-label">Warning</span>
+  </div>
+  <div class="state-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EF4444' stroke='%23DC2626' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m15 9-6 6'/%3E%3Cpath d='m9 9 6 6'/%3E%3C/svg%3E" alt="Error">
+    <span class="state-label">Error</span>
+  </div>
+  <div class="state-item">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232EA3F2' stroke='%231D4ED8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 16v-4'/%3E%3Cpath d='M12 8h.01'/%3E%3C/svg%3E" alt="Info">
+    <span class="state-label">Info</span>
+  </div>
+</div>
+
+<table>
+  <tr>
+    <th>Status</th>
+    <th>Fill (500)</th>
+    <th>Outline (600)</th>
+    <th>Use Case</th>
+  </tr>
+  <tr>
+    <td>Success</td>
+    <td><code>#10B981</code></td>
+    <td><code>#059669</code></td>
+    <td>Confirmed, complete, selected</td>
+  </tr>
+  <tr>
+    <td>Warning</td>
+    <td><code>#F59E0B</code></td>
+    <td><code>#D97706</code></td>
+    <td>Pending, caution</td>
+  </tr>
+  <tr>
+    <td>Error</td>
+    <td><code>#EF4444</code></td>
+    <td><code>#DC2626</code></td>
+    <td>Failed, destructive</td>
+  </tr>
+  <tr>
+    <td>Info</td>
+    <td><code>#2EA3F2</code></td>
+    <td><code>#1D4ED8</code></td>
+    <td>Active, informational</td>
+  </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- Navigation Icons -->
+<h1>Navigation Icons</h1>
+
+<div class="icon-grid">
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" alt="home">
+    <span class="label">home</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='18' x='3' y='4' rx='2' ry='2'/%3E%3Cline x1='16' x2='16' y1='2' y2='6'/%3E%3Cline x1='8' x2='8' y1='2' y2='6'/%3E%3Cline x1='3' x2='21' y1='10' y2='10'/%3E%3C/svg%3E" alt="calendar">
+    <span class="label">calendar</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E" alt="users">
+    <span class="label">users</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z'/%3E%3Cpath d='M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2'/%3E%3Cpath d='M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2'/%3E%3Cpath d='M10 6h4'/%3E%3Cpath d='M10 10h4'/%3E%3Cpath d='M10 14h4'/%3E%3Cpath d='M10 18h4'/%3E%3C/svg%3E" alt="building">
+    <span class="label">building-2</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E" alt="settings">
+    <span class="label">settings</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='4' x2='20' y1='12' y2='12'/%3E%3Cline x1='4' x2='20' y1='6' y2='6'/%3E%3Cline x1='4' x2='20' y1='18' y2='18'/%3E%3C/svg%3E" alt="menu">
+    <span class="label">menu</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E" alt="chevron-left">
+    <span class="label">chevron-left</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E" alt="chevron-right">
+    <span class="label">chevron-right</span>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- Action Icons -->
+<h1>Action Icons</h1>
+
+<div class="icon-grid">
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M12 5v14'/%3E%3C/svg%3E" alt="plus">
+    <span class="label">plus</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z'/%3E%3Cpath d='m15 5 4 4'/%3E%3C/svg%3E" alt="pencil">
+    <span class="label">pencil</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 6h18'/%3E%3Cpath d='M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6'/%3E%3Cpath d='M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2'/%3E%3Cline x1='10' x2='10' y1='11' y2='17'/%3E%3Cline x1='14' x2='14' y1='11' y2='17'/%3E%3C/svg%3E" alt="trash">
+    <span class="label">trash-2</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E" alt="search">
+    <span class="label">search</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='21' x2='14' y1='4' y2='4'/%3E%3Cline x1='10' x2='3' y1='4' y2='4'/%3E%3Cline x1='21' x2='12' y1='12' y2='12'/%3E%3Cline x1='8' x2='3' y1='12' y2='12'/%3E%3Cline x1='21' x2='16' y1='20' y2='20'/%3E%3Cline x1='12' x2='3' y1='20' y2='20'/%3E%3Cline x1='14' x2='14' y1='2' y2='6'/%3E%3Cline x1='8' x2='8' y1='10' y2='14'/%3E%3Cline x1='16' x2='16' y1='18' y2='22'/%3E%3C/svg%3E" alt="filter">
+    <span class="label">sliders</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18'/%3E%3Cpath d='m6 6 12 12'/%3E%3C/svg%3E" alt="x">
+    <span class="label">x (close)</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E" alt="check">
+    <span class="label">check</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='1'/%3E%3Ccircle cx='19' cy='12' r='1'/%3E%3Ccircle cx='5' cy='12' r='1'/%3E%3C/svg%3E" alt="more">
+    <span class="label">more</span>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- Booking Sources -->
+<h1>Booking Sources / Integrations</h1>
+
+<p>Official brand logos for booking platforms and communication channels. These use the original brand marks.</p>
+
+<div class="brand-grid">
+  <!-- Airbnb -->
+  <div class="brand-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF5A5F' d='M12.001 18.275c-1.353-1.697-2.148-3.184-2.413-4.457-.263-1.027-.16-1.848.291-2.465.477-.71 1.188-1.056 2.121-1.056s1.643.345 2.12 1.063c.446.61.558 1.432.286 2.465-.291 1.298-1.085 2.785-2.412 4.458zm9.601 1.14c-.185 1.246-1.034 2.28-2.2 2.783-2.253.98-4.483-.583-6.392-2.704 3.157-3.951 3.74-7.028 2.385-9.018-.795-1.14-1.933-1.695-3.394-1.695-2.944 0-4.563 2.49-3.927 5.382.37 1.565 1.352 3.343 2.917 5.332-.98 1.085-1.91 1.856-2.732 2.333-.636.344-1.245.558-1.828.609-2.679.399-4.778-2.2-3.825-4.88.132-.345.395-.98.845-1.961l.025-.053c1.464-3.178 3.242-6.79 5.285-10.795l.053-.132.58-1.116c.45-.822.635-1.19 1.351-1.643.346-.21.77-.315 1.246-.315.954 0 1.698.558 2.016 1.007.158.239.345.557.582.953l.558 1.089.08.159c2.041 4.004 3.821 7.608 5.279 10.794l.026.025.533 1.22.318.764c.243.613.294 1.222.213 1.858zm1.22-2.39c-.186-.583-.505-1.271-.9-2.094v-.03c-1.889-4.006-3.642-7.608-5.307-10.844l-.111-.163C15.317 1.461 14.468 0 12.001 0c-2.44 0-3.476 1.695-4.535 3.898l-.081.16c-1.669 3.236-3.421 6.843-5.303 10.847v.053l-.559 1.22c-.21.504-.317.768-.345.847C-.172 20.74 2.611 24 5.98 24c.027 0 .132 0 .265-.027h.372c1.75-.213 3.554-1.325 5.384-3.317 1.829 1.989 3.635 3.104 5.382 3.317h.372c.133.027.239.027.265.027 3.37.003 6.152-3.261 4.802-6.975z'/%3E%3C/svg%3E" alt="Airbnb">
+    <span class="brand-name">Airbnb</span>
+    <span class="brand-type">OTA Channel</span>
+  </div>
+
+  <!-- Booking.com -->
+  <div class="brand-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23003580' d='M24 0H0v24h24ZM8.575 6.563h2.658c2.108 0 3.473 1.15 3.473 2.898 0 1.15-.575 1.82-.91 2.108l-.287.263.335.192c.815.479 1.318 1.389 1.318 2.395 0 1.988-1.51 3.257-3.857 3.257H7.449V7.713c0-.623.503-1.126 1.126-1.15zm1.7 1.868c-.479.024-.694.264-.694.79v1.893h1.676c.958 0 1.294-.743 1.294-1.365 0-.815-.503-1.318-1.318-1.318zm-.096 4.36c-.407.071-.598.31-.598.79v2.251h1.868c.934 0 1.509-.55 1.509-1.533 0-.934-.599-1.509-1.51-1.509zm7.737 2.394c.743 0 1.341.599 1.341 1.342a1.34 1.34 0 0 1-1.341 1.341 1.355 1.355 0 0 1-1.341-1.341c0-.743.598-1.342 1.34-1.342z'/%3E%3C/svg%3E" alt="Booking.com">
+    <span class="brand-name">Booking.com</span>
+    <span class="brand-type">OTA Channel</span>
+  </div>
+
+  <!-- Expedia -->
+  <div class="brand-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FFCC00' d='M19.067 0H4.933A4.94 4.94 0 0 0 0 4.933v14.134A4.932 4.932 0 0 0 4.933 24h14.134A4.932 4.932 0 0 0 24 19.067V4.933C24.01 2.213 21.797 0 19.067 0ZM7.336 19.341c0 .19-.148.337-.337.337h-2.33a.333.333 0 0 1-.337-.337v-2.33c0-.189.148-.336.337-.336H7c.19 0 .337.147.337.337zm12.121-1.486-2.308 2.298c-.169.168-.422.053-.422-.2V9.57l-6.44 6.44a.533.533 0 0 1-.421.17H8.169a.32.32 0 0 1-.338-.338v-1.697c0-.2.053-.316.169-.422l6.44-6.44H4.058c-.253 0-.369-.253-.2-.421l2.297-2.309c.137-.137.285-.232.517-.232H18.15c.854 0 1.539.686 1.539 1.54v11.478c-.01.231-.095.368-.232.516z'/%3E%3C/svg%3E" alt="Expedia">
+    <span class="brand-name">Expedia</span>
+    <span class="brand-type">OTA Channel</span>
+  </div>
+
+  <!-- WhatsApp -->
+  <div class="brand-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2325D366' d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z'/%3E%3C/svg%3E" alt="WhatsApp">
+    <span class="brand-name">WhatsApp</span>
+    <span class="brand-type">Communication</span>
+  </div>
+
+  <!-- Direct Booking -->
+  <div class="brand-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E09900' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" alt="Direct">
+    <span class="brand-name">Direct</span>
+    <span class="brand-type">Website Booking</span>
+  </div>
+
+  <!-- Phone -->
+  <div class="brand-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23004B56' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E" alt="Phone">
+    <span class="brand-name">Phone</span>
+    <span class="brand-type">Reservation</span>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- Room Amenities -->
+<h1>Room Amenities</h1>
+
+<div class="icon-grid">
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 4v16'/%3E%3Cpath d='M2 8h18a2 2 0 0 1 2 2v10'/%3E%3Cpath d='M2 17h20'/%3E%3Cpath d='M6 8v9'/%3E%3C/svg%3E" alt="bed">
+    <span class="label">bed-double</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.55a11 11 0 0 1 14.08 0'/%3E%3Cpath d='M1.42 9a16 16 0 0 1 21.16 0'/%3E%3Cpath d='M8.53 16.11a6 6 0 0 1 6.95 0'/%3E%3Cline x1='12' x2='12.01' y1='20' y2='20'/%3E%3C/svg%3E" alt="wifi">
+    <span class="label">wifi</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2'/%3E%3Ccircle cx='7' cy='17' r='2'/%3E%3Cpath d='M9 17h6'/%3E%3Ccircle cx='17' cy='17' r='2'/%3E%3C/svg%3E" alt="parking">
+    <span class="label">parking</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1'/%3E%3Cpath d='M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1'/%3E%3Cpath d='M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1'/%3E%3C/svg%3E" alt="pool">
+    <span class="label">pool</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M12 2v2'/%3E%3Cpath d='M12 20v2'/%3E%3Cpath d='m4.93 4.93 1.41 1.41'/%3E%3Cpath d='m17.66 17.66 1.41 1.41'/%3E%3Cpath d='M2 12h2'/%3E%3Cpath d='M20 12h2'/%3E%3Cpath d='m6.34 17.66-1.41 1.41'/%3E%3Cpath d='m19.07 4.93-1.41 1.41'/%3E%3C/svg%3E" alt="terrace">
+    <span class="label">terrace</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='20' height='15' x='2' y='7' rx='2' ry='2'/%3E%3Cpolyline points='17 2 12 7 7 2'/%3E%3C/svg%3E" alt="tv">
+    <span class="label">tv</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='11' x='3' y='11' rx='2' ry='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E" alt="safe">
+    <span class="label">safe</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cline x1='21.17' x2='12' y1='8' y2='8'/%3E%3Cline x1='3.95' x2='8.54' y1='6.06' y2='14'/%3E%3Cline x1='10.88' x2='15.46' y1='21.94' y2='14'/%3E%3C/svg%3E" alt="ac">
+    <span class="label">air-con</span>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- Restaurant Icons -->
+<h1>Restaurant / F&B</h1>
+
+<div class="icon-grid">
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2'/%3E%3Cpath d='M7 2v20'/%3E%3Cpath d='M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7'/%3E%3C/svg%3E" alt="utensils">
+    <span class="label">utensils</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 8h1a4 4 0 1 1 0 8h-1'/%3E%3Cpath d='M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z'/%3E%3Cline x1='6' x2='6' y1='2' y2='4'/%3E%3Cline x1='10' x2='10' y1='2' y2='4'/%3E%3Cline x1='14' x2='14' y1='2' y2='4'/%3E%3C/svg%3E" alt="coffee">
+    <span class="label">coffee</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 22h8'/%3E%3Cpath d='M7 10h10'/%3E%3Cpath d='M12 15v7'/%3E%3Cpath d='M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z'/%3E%3C/svg%3E" alt="wine">
+    <span class="label">wine</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9'/%3E%3Cpath d='M10.3 21a1.94 1.94 0 0 0 3.4 0'/%3E%3C/svg%3E" alt="room service">
+    <span class="label">room service</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z'/%3E%3Cline x1='6' x2='18' y1='17' y2='17'/%3E%3C/svg%3E" alt="chef">
+    <span class="label">chef-hat</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/%3E%3Cpath d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/%3E%3C/svg%3E" alt="menu">
+    <span class="label">book-open</span>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- Status Indicators -->
+<h1>Status Indicators</h1>
+
+<div class="icon-grid">
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E" alt="success">
+    <span class="label">check-circle</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F59E0B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z'/%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3C/svg%3E" alt="warning">
+    <span class="label">alert-triangle</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EF4444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m15 9-6 6'/%3E%3Cpath d='m9 9 6 6'/%3E%3C/svg%3E" alt="error">
+    <span class="label">x-circle</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232EA3F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 16v-4'/%3E%3Cpath d='M12 8h.01'/%3E%3C/svg%3E" alt="info">
+    <span class="label">info</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E" alt="pending">
+    <span class="label">clock</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E09900' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z'/%3E%3Cpath d='M5 3v4'/%3E%3Cpath d='M19 17v4'/%3E%3Cpath d='M3 5h4'/%3E%3Cpath d='M17 19h4'/%3E%3C/svg%3E" alt="new">
+    <span class="label">sparkles</span>
+  </div>
+</div>
+
+<h2>Analytics</h2>
+
+<div class="icon-grid">
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' x2='12' y1='2' y2='22'/%3E%3Cpath d='M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6'/%3E%3C/svg%3E" alt="dollar">
+    <span class="label">dollar-sign</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 3v18h18'/%3E%3Cpath d='M18 17V9'/%3E%3Cpath d='M13 17V5'/%3E%3Cpath d='M8 17v-3'/%3E%3C/svg%3E" alt="chart">
+    <span class="label">bar-chart</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='22 7 13.5 15.5 8.5 10.5 2 17'/%3E%3Cpolyline points='16 7 22 7 22 13'/%3E%3C/svg%3E" alt="trending up">
+    <span class="label">trending-up</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EF4444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='22 17 13.5 8.5 8.5 13.5 2 7'/%3E%3Cpolyline points='16 17 22 17 22 11'/%3E%3C/svg%3E" alt="trending down">
+    <span class="label">trending-down</span>
+  </div>
+  <div class="icon-card">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='19' x2='5' y1='5' y2='19'/%3E%3Ccircle cx='6.5' cy='6.5' r='2.5'/%3E%3Ccircle cx='17.5' cy='17.5' r='2.5'/%3E%3C/svg%3E" alt="percent">
+    <span class="label">percent</span>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Toumana Icon System Guide v1.0 | Jardins de Toumana | January 2026</p>
+  <p>Icons: Lucide (MIT License) | Brand Logos: Simple Icons | Design: Apple/Airbnb Aesthetic</p>
+</div>
+
+</body>
+</html>

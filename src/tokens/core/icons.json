@@ -1,0 +1,20 @@
+{
+  "icon": {
+    "size": {
+      "xs": { "value": "14px", "type": "dimension", "description": "Extra small - badges, source indicators" },
+      "sm": { "value": "16px", "type": "dimension", "description": "Small - inline text, compact UI" },
+      "md": { "value": "20px", "type": "dimension", "description": "Medium (default) - buttons, nav items" },
+      "lg": { "value": "24px", "type": "dimension", "description": "Large - stat cards, section headers" },
+      "xl": { "value": "32px", "type": "dimension", "description": "Extra large - empty states, modals" }
+    },
+    "strokeWidth": {
+      "light": { "value": "1.5", "type": "number", "description": "Light stroke for large icons (24-32px)" },
+      "default": { "value": "2", "type": "number", "description": "Default stroke (Apple/Airbnb standard)" },
+      "bold": { "value": "2.5", "type": "number", "description": "Bold stroke for selected/active state" }
+    },
+    "style": {
+      "linecap": { "value": "round", "type": "string", "description": "Rounded line endings" },
+      "linejoin": { "value": "round", "type": "string", "description": "Rounded line joints" }
+    }
+  }
+}
