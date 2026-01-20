@@ -1,5 +1,18 @@
 # Toumana Brand Kit
 
+> **CLAUDE-PM ORCHESTRATED**
+> This project is managed by the claude-PM agent-of-agents system.
+> Master registry: `/Users/balencia/Documents/Code/claude-PM/foundation/agents/registry.json`
+> Project mapping: `/Users/balencia/Documents/Code/claude-PM/infrastructure/config/project-agent-map.json`
+>
+> All code changes → `/code` (Coder agent)
+> All deployments → `/deploy` (Deployment agent)
+> Complex tasks → `/orchestrate` (auto-routes to appropriate agents)
+
+---
+
+
+
 Design tokens and theme package for Jardins de Toumana applications.
 
 **npm package:** `@runwell/toumana-brand-kit`
@@ -41,12 +54,33 @@ Jardins Toumana operates with **4 sub-brands**:
 | Soft Lime | `#DDE4B8` | Secondary |
 | Coral Orange | `#FF6D33` | Accent, CTAs |
 
-**Typography:** Avenir Next (weights 400, 500, 600, 700)
+## Typography (Updated 2026-01-20)
+
+| Usage | Font | Source | Notes |
+|-------|------|--------|-------|
+| Display/Headings | **Aboreto** | Google Fonts | Art Deco geometric style, weight 400 |
+| Body | **DM Sans** | Google Fonts | Clean modern sans-serif, weights 400-700 |
+
+**Heading specs (from Azza's Figma):**
+- Hero headlines: 80px, line-height 100%, letter-spacing 0%, ALL CAPS
+- Section titles: Aboreto, regular weight
+
+## Logo Assets
+
+Located in `src/assets/logos/`:
+
+| File | Description | Dimensions |
+|------|-------------|------------|
+| `logo-full-vertical.svg` | Full logo with arch + "JARDINS" + "TOUMANA" stacked | 175×97 |
+| `logo-horizontal.svg` | Horizontal layout with arch + text side by side | 240×61 |
+| `logo-icon.svg` | Arch icon only (for favicon, app icon) | 47×51 |
 
 ## Package Structure
 
 ```
 src/
+  assets/
+    logos/      # Logo SVG files
   tokens/
     core/       # Spacing, typography, radii, shadows
     brand/      # Colors, semantic tokens (light/dark)

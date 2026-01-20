@@ -1,7 +1,13 @@
 {
   "fontFamily": {
-    "sans": { "value": "Avenir Next, Avenir, system-ui, -apple-system, sans-serif", "type": "fontFamily" },
+    "display": { "value": "Aboreto, Georgia, serif", "type": "fontFamily", "description": "Display/heading font - Art Deco geometric style (Google Font)" },
+    "body": { "value": "DM Sans, system-ui, -apple-system, sans-serif", "type": "fontFamily", "description": "Body text font - clean modern sans-serif (Google Font)" },
+    "sans": { "value": "DM Sans, system-ui, -apple-system, sans-serif", "type": "fontFamily", "description": "Alias for body font" },
     "mono": { "value": "JetBrains Mono, Menlo, monospace", "type": "fontFamily" }
+  },
+  "fontFamilyGoogle": {
+    "display": { "value": "Aboreto", "type": "string", "description": "Google Fonts name for display font" },
+    "body": { "value": "DM Sans", "type": "string", "description": "Google Fonts name for body font" }
   },
   "fontSize": {
     "xs": { "value": "0.75rem", "type": "dimension" },
