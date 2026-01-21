@@ -11,7 +11,14 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/esm/index.js"
     },
-    "./css/*": "./dist/css/*",
+    "./dist/css/*": {
+      "style": "./dist/css/*",
+      "default": "./dist/css/*"
+    },
+    "./css/*": {
+      "style": "./dist/css/*",
+      "default": "./dist/css/*"
+    },
     "./tailwind/preset": {
       "require": "./dist/tailwind/preset.js",
       "import": "./dist/tailwind/preset.js",
