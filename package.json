@@ -1,6 +1,6 @@
 {
   "name": "@runwell/toumana-brand-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Design tokens and theme for Jardins de Toumana - Mediterranean warmth with gold accent",
   "type": "module",
   "main": "./dist/esm/index.js",
