@@ -21,9 +21,9 @@
     "surfaceAlt": { "value": "#DDE4B8", "type": "color" },
 
     "text": { "value": "#515839", "type": "color" },
-    "textSecondary": { "value": "#666666", "type": "color" },
-    "textMuted": { "value": "#999999", "type": "color" },
-    "textDisabled": { "value": "#CCCCCC", "type": "color" },
+    "textSecondary": { "value": "#515839", "type": "color", "description": "Description text - uses olive for brand consistency" },
+    "textMuted": { "value": "#7F8664", "type": "color", "description": "Muted text - lighter olive shade" },
+    "textDisabled": { "value": "#AEB490", "type": "color" },
 
     "border": { "value": "#E5E5E5", "type": "color" },
     "borderHover": { "value": "#CCCCCC", "type": "color" },

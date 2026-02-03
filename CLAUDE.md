@@ -54,12 +54,12 @@ Jardins Toumana operates with **4 sub-brands**:
 | Soft Lime | `#DDE4B8` | Secondary |
 | Coral Orange | `#FF6D33` | Accent, CTAs |
 
-## Typography (Updated 2026-01-20)
+## Typography (Updated 2026-02-03)
 
 | Usage | Font | Source | Notes |
 |-------|------|--------|-------|
 | Display/Headings | **Aboreto** | Google Fonts | Art Deco geometric style, weight 400 |
-| Body | **DM Sans** | Google Fonts | Clean modern sans-serif, weights 400-700 |
+| Body | **Montserrat** | Google Fonts | Modern geometric sans-serif, weights 400-700 |
 
 **Heading specs (from Azza's Figma):**
 - Hero headlines: 80px, line-height 100%, letter-spacing 0%, ALL CAPS
